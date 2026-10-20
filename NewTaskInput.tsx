@@ -1,24 +1,18 @@
 import { useState } from "react";
 
-function NewTaskInput() {
+// NewTaskInput.tsx
+function NewTaskInput({ onAddTask }: { onAddTask: (title: string) => void }) {
   const [text, setText] = useState("");
+  function handleAdd() {
+    if (text.trim() === "") return;
+    onAddTask(text);
+    setText("");
+  }
   return (
-    <>
-      <input
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-        placeholder="Add a task..."
-      />
-      <button
-        type="button"
-        onClick={() => {
-          console.log(text);
-          setText("");
-        }}
-      >
-        Add
-      </button>
-    </>
+    <div>
+      <input value={text} onChange={(e) => setText(e.target.value)} />
+      <button onClick={handleAdd}>Add</button>
+    </div>
   );
 }
 

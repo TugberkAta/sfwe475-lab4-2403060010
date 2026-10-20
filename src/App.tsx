@@ -1,11 +1,9 @@
-import TaskList from "../TaskList";
-import NewTaskInput from "../NewTaskInput";
+import TaskBoard from "../TaskBoard";
 
 function App() {
   return (
     <div>
-      <NewTaskInput />
-      <TaskList />
+      <TaskBoard />
     </div>
   );
 }
