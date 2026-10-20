@@ -1,5 +1,5 @@
 import type { Task } from "./schemas";
-import type { TaskFilter } from "./src/FilterBar";
+import type { TaskFilter } from "./FilterBar";
 import TaskCard from "./TaskCard";
 function TaskList({
   tasks,

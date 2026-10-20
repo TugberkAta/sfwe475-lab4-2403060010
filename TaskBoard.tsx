@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import type { Task } from "./schemas";
 import TaskList from "./TaskList";
 import NewTaskInput from "./NewTaskInput";
-import FilterBar, { type TaskFilter } from "./src/FilterBar";
+import FilterBar, { type TaskFilter } from "./FilterBar";
 
 const TASKS_STORAGE_KEY = "tasks";
 const defaultTasks: Task[] = [
