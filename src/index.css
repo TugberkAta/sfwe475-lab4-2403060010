@@ -132,3 +132,28 @@ code {
   border-color: var(--accent-border);
   font-weight: 600;
 }
+
+.new-task-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  margin: 16px 0 8px;
+}
+
+.new-task-form div {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.new-task-form label {
+  font-size: 14px;
+  color: var(--text-h);
+}
+
+.field-error {
+  color: #d92d20;
+  font-size: 14px;
+}
