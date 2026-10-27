@@ -16,7 +16,7 @@ function TaskCard({
 }: TaskCardProps) {
   return (
     <div className="task-card">
-      <h3>{title}</h3>
+      <h2>{title}</h2>
       {status && <p>Status: {status}</p>}
       {dueDate && <p>Due: {dueDate}</p>}
       <TaskCheckbox done={done} onToggle={() => onToggleTask(id)} />

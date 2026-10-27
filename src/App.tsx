@@ -2,9 +2,10 @@ import TaskBoard from "../TaskBoard";
 
 function App() {
   return (
-    <div>
+    <main>
+      <h1>Task board</h1>
       <TaskBoard />
-    </div>
+    </main>
   );
 }
 export default App;

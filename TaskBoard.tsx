@@ -83,7 +83,7 @@ function TaskBoard() {
 
   if (status === "loading" || status === "error" || status === "empty") {
     return (
-      <div>
+      <div aria-live="polite">
         {status === "loading" && <p>Loading tasks...</p>}
         {status === "error" && (
           <>
