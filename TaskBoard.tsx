@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
-import type { Task } from "./schemas";
+import type { CreateTaskInput, Task } from "./schemas";
 import TaskList from "./TaskList";
-import NewTaskInput from "./NewTaskInput";
+import NewTaskForm from "./NewTaskForm";
 import FilterBar, { type TaskFilter } from "./FilterBar";
 import { simulateFetchTasks } from "./mockApi";
 
@@ -37,8 +37,17 @@ function TaskBoard() {
     "loading" | "success" | "empty" | "error"
   >("loading");
 
-  function handleAddTask(title: string) {
-    setTasks([...tasks, { id: tasks.length + 1, title, done: false }]);
+  function handleAddTask(input: CreateTaskInput) {
+    setTasks([
+      ...tasks,
+      {
+        id: Math.max(0, ...tasks.map((task) => task.id)) + 1,
+        title: input.title,
+        done: input.status === "done",
+        dueDate: input.dueDate || undefined,
+        status: input.status,
+      },
+    ]);
   }
 
   function handleToggleTask(id: number) {
@@ -98,7 +107,7 @@ function TaskBoard() {
   }
   return (
     <div>
-      <NewTaskInput onAddTask={handleAddTask} />
+      <NewTaskForm onAddTask={handleAddTask} />
       <FilterBar filter={filter} onFilterChange={setFilter} />
       <TaskList tasks={tasks} filter={filter} onToggleTask={handleToggleTask} />
     </div>
